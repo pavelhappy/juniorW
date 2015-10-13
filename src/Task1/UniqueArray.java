@@ -6,7 +6,7 @@ package Task1;
 public class UniqueArray {
     public static int[] unique(int[] integers)
     {
-        
+        //тестим Гит.
        // return something;
     }
 }
