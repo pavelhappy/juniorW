@@ -1,34 +1,33 @@
 package Task1;
 
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class UniqueArray {
     public static int[] unique(int[] integers)
     {
-        ArrayList<Integer> resultInt = new ArrayList<Integer>();
-        int current = integers[0];
-        boolean found = false;
+        List<Integer> tempList = new ArrayList<Integer>();
+        for (int i = 0; i < integers.length; i++) {
+            tempList.add(integers[i]);
+        }
+        int size = tempList.size();
+        int duplicates = 0;
 
-        for (int i = 0; i < integers.length; i++)
-        {
-            if (current == integers[i] && !found)
-            {
-                found = true;
-            }
-            else if (current != integers[i])
-            {
-                resultInt.add(current);
-                current = integers[i];
-                found = false;
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = i + 1; j < size; j++) {
+                if (!tempList.get(j).equals(tempList.get(i)))
+                    continue;
+                duplicates++;
+                tempList.remove(j);
+                j--;
+                size--;
             }
         }
-        int[] result = new int[resultInt.size()];
-        for (int i = 0; i < resultInt.size(); i++) {
-            result[i] = resultInt.get(i);
+        int[] result = new int[tempList.size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i]= tempList.get(i);
         }
+
 
         return result;
     }
