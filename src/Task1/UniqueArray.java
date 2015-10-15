@@ -12,7 +12,18 @@ int[]  unique(int[]  integers); На вход подаётся массив, в 
 
 import java.util.*;
 
-public class UniqueArray {
+public class UniqueArray
+{
+    public static void main(String[] args)
+    {
+        int[] massive = {1, 5, 2, -1, 5, 35, 4, 8};
+        int[] result = UniqueArray.unique(massive);
+
+        for (int i = 0; i < result.length; i++) {
+            System.out.print(result[i] + " ");
+        }
+    }
+
     public static int[] unique(int[] integers)
     {
         List<Integer> tempList = new ArrayList<Integer>();
