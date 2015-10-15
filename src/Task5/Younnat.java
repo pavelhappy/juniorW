@@ -16,10 +16,6 @@ public class Younnat
 {
     public static void main(String[] args)
     {
-        String n = "NORTH";
-        String s = "SOUTH";
-        String e = "EAST";
-        String w = "WEST";
         String[] result = dirReduc(new String[]{"NORTH", "SOUTH", "SOUTH","SOUTH", "EAST", "WEST", "NORTH", "WEST"});
         for (int i = 0; i < result.length; i++) {
             System.out.print(result[i] + " ");
@@ -72,7 +68,6 @@ public class Younnat
         for (int i = 0; i < west; i++) {
             routesList.add("WEST");
         }
-        //System.out.println(cN + " " + cS + " " + cE + " " + cW);
         String[] result = new String[routesList.size()];
         for (int i = 0; i < result.length; i++) {
             result[i] = routesList.get(i);
