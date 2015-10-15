@@ -9,10 +9,11 @@ shorter+reverse(longer)+shorter. Строки могут быть пустыми
  */
 public class twoRows
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         String a = "short";
         String b = "longword";
         String result = srs(a,b);
+
         System.out.println(result);
     }
 
@@ -20,6 +21,9 @@ public class twoRows
     {
         String longer;
         String shorter;
+        if (a == null) a = "";
+        if (b == null) b = "";
+
         if (a.length()>b.length())
         {
             longer = a;
